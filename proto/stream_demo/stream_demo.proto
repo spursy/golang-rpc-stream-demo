@@ -1,0 +1,15 @@
+syntax = "proto3";
+option go_package = "/stream_demo;stream_demo";
+package protobuf;
+
+service StreamService {
+  rpc OpenAiChat (Request) returns (stream Response) {}
+}
+
+message Request {
+  string input = 1;
+}
+
+message Response {
+  string result = 1;
+}
